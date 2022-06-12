@@ -11,7 +11,6 @@ class PreviewProfileView {
   render(data) {
     this._data = data;
     if (!this._data) return;
-    console.log(this._data);
     const html = this._generateMarkup();
     this._parentElement.innerHTML = "";
     this._parentElement.insertAdjacentHTML("afterbegin", html);

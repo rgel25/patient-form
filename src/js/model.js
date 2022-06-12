@@ -72,7 +72,6 @@ export const addPatient = function (patient) {
 const init = function () {
   const storage = localStorage.getItem("patients");
   if (storage) state.patients = JSON.parse(storage);
-  console.log(state.patients);
 };
 
 init();

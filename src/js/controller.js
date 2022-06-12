@@ -90,7 +90,7 @@ const controlFormSubmit = function (data) {
 
   // SUCCESS FEEDBACK
   formView.renderSuccess();
-  console.log("should render");
+
   // CLEAR FORM
   formView.clearForm();
   // ADD PATIENT TO PATIENTS
@@ -102,16 +102,13 @@ const controlFormSubmit = function (data) {
 };
 
 const controlPatientCard = function () {
-  console.log(model.state.patients);
   const id = window.location.hash.slice(1);
   if (!id) return;
   model.state.patient =
     model.state.patients[
       model.state.patients.findIndex((patient) => +patient.id === +id)
     ];
-  // console.log(model.state.patient);
-  // console.log(model.state.patient);
-  // console.log(model.state.patients);
+
   patientProfileView.render(model.state.patient);
 };
 
@@ -123,7 +120,6 @@ const init = function () {
   formView.addHandlerFormSubmit(controlFormSubmit);
   patientProfileView.addHandlerRender(controlPatientCard);
   previewProfileView.addHandlerRender(controlPreviewProfile);
-  console.log("initialized");
 };
 
 init();

@@ -2,7 +2,7 @@ class FormView {
   _parentElement = document.querySelector(".form");
   _btnSubmit = document.querySelector("#form-submit");
   _btnReset = document.querySelector("#form-reset");
-  _btnTest = document.querySelector("#test");
+  //   _btnTest = document.querySelector("#test");
   _cbNone = document.querySelector("#none-cb");
   _cbOthers = document.querySelector("#others");
   _cbYesMedication = document.querySelector("#yes-medication");
@@ -11,22 +11,22 @@ class FormView {
   _formOverlay = document.querySelector(".form-overlay");
 
   constructor() {
-    this._btnTest.addEventListener("click", () => {
-      document.querySelector("input[name='first-name']").value = "randomfirst";
-      document.querySelector("input[name='middle-name']").value =
-        "randommiddle";
-      document.querySelector("input[name='last-name']").value = "randomlast";
-      document.querySelector("input[name='address']").value = "randomaddress";
-      document.querySelector("input[name='birth-date']").value = "2018-07-22";
-      document.querySelector("input[name='contact-number']").value =
-        "09276302875";
-      document.querySelector("input[value='male']").checked = true;
-      document.querySelector("input[name='history-asthma']").checked = true;
-      document.querySelector("input[name='history-cancer']").checked = true;
-      document.querySelector("#yes-medication").checked = true;
-      document.querySelector("#test-symptom1").selected = true;
-      document.querySelector("#test-symptom2").selected = true;
-    });
+    // this._btnTest.addEventListener("click", () => {
+    //   document.querySelector("input[name='first-name']").value = "randomfirst";
+    //   document.querySelector("input[name='middle-name']").value =
+    //     "randommiddle";
+    //   document.querySelector("input[name='last-name']").value = "randomlast";
+    //   document.querySelector("input[name='address']").value = "randomaddress";
+    //   document.querySelector("input[name='birth-date']").value = "2018-07-22";
+    //   document.querySelector("input[name='contact-number']").value =
+    //     "09276302875";
+    //   document.querySelector("input[value='male']").checked = true;
+    //   document.querySelector("input[name='history-asthma']").checked = true;
+    //   document.querySelector("input[name='history-cancer']").checked = true;
+    //   document.querySelector("#yes-medication").checked = true;
+    //   document.querySelector("#test-symptom1").selected = true;
+    //   document.querySelector("#test-symptom2").selected = true;
+    // });
 
     this._cbNone.addEventListener("change", () => {
       if (this._cbNone.checked) {
@@ -59,7 +59,6 @@ class FormView {
     this._formOverlay.addEventListener("click", (e) => {
       const btn = e.target.closest("#confirm-registration");
       if (!btn) return;
-      console.log("clicked");
       this._formOverlay.classList.add("form-overlay--inactive");
       this._formOverlay.innerHTML = "";
     });
@@ -83,7 +82,6 @@ class FormView {
   }
 
   renderSuccess() {
-    console.log(this._formOverlay);
     this._formOverlay.classList.remove("form-overlay--inactive");
     const html = `
         <p>Patient registration succesful!</p>
