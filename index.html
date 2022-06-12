@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/src/sass/main.scss" />
+    <script type="module" src="src/js/controller.js"></script>
+  </head>
+  <body>
+    <section class="form-container">
+      <div class="form-overlay has-text-white form-overlay--inactive"></div>
+      <div class="form-wrapper">
+        <div class="form-image-wrapper">
+          <img src="./src/img/form-image.webp" alt="" />
+        </div>
+        <div class="form-details-wrapper">
+          <h1 class="is-size-3 has-text-weight-bold">St. Mary's Hospital</h1>
+          <h2 class="is-size-5 has-text-weight-semi-bold">Patient form</h2>
+          <form action="/" class="form">
+            <!-- FIRST NAME -->
+            <div class="field is-grouped">
+              <div class="field mr-5">
+                <label class="label" for="first-name">First Name</label>
+                <input
+                  class="control"
+                  required
+                  type="text"
+                  name="first-name"
+                  id="first-name"
+                />
+              </div>
+              <!-- MIDDLE NAME -->
+              <div class="field mr-5">
+                <label class="label" for="middle-name">Middle Name</label>
+                <input
+                  class="control"
+                  type="text"
+                  name="middle-name"
+                  id="middle-name"
+                />
+              </div>
+              <!-- LAST NAME -->
+              <div class="field">
+                <label class="label" for="last-name">Last Name</label>
+                <input
+                  class="control"
+                  required
+                  type="text"
+                  name="last-name"
+                  id="last-name"
+                />
+              </div>
+            </div>
+            <!-- ADDRESS -->
+            <div class="field is-grouped">
+              <div class="field mr-5">
+                <label class="label" for="address">Address</label>
+                <input
+                  class="control"
+                  required
+                  type="text"
+                  name="address"
+                  id="address"
+                />
+              </div>
+              <!-- BIRTHDATE -->
+              <div class="field mr-5">
+                <label class="label" for="contact-number">Contact Number</label>
+                <input
+                  class="control"
+                  required
+                  type="number"
+                  name="contact-number"
+                  id="contact-number"
+                />
+              </div>
+              <!-- CONTACT NUMBER -->
+
+              <div class="field mr-5">
+                <label class="label" for="birth-date">Birthdate</label>
+                <input
+                  class="control"
+                  required
+                  type="date"
+                  name="birth-date"
+                  id="birth-date"
+                />
+              </div>
+            </div>
+            <!-- GENDER -->
+            <div class="field">
+              <span class="label">Gender: </span>
+              <input
+                required
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+              />
+              <label class="radio" for="male">Male</label>
+              <input
+                required
+                type="radio"
+                id="female"
+                name="gender"
+                value="female"
+              />
+              <label class="radio" for="female">Female</label>
+            </div>
+            <!-- MEDICAL HISTORY -->
+            <div class="field">
+              <span class="label">Medical History:</span>
+              <div class="field">
+                <input
+                  type="checkbox"
+                  class="history-cb"
+                  id="asthma"
+                  name="history-asthma"
+                />
+                <label class="checkbox mr-3" for="asthma">Asthma</label>
+                <input
+                  type="checkbox"
+                  class="history-cb"
+                  id="cancer"
+                  name="history-cancer"
+                />
+                <label class="checkbox mr-3" for="cancer">Cancer</label>
+                <input
+                  type="checkbox"
+                  class="history-cb"
+                  id="cardiac-disease"
+                  name="history-cardiac-disease"
+                />
+                <label class="checkbox mr-3" for="cardiac-disease"
+                  >Cardiac-disease</label
+                >
+                <input
+                  type="checkbox"
+                  class="history-cb"
+                  id="diabetes"
+                  name="history-diabetes"
+                />
+                <label class="checkbox mr-3" for="diabetes">Diabetes</label>
+                <input
+                  type="checkbox"
+                  class="history-cb"
+                  id="hypertension"
+                  name="history-hypertension"
+                />
+                <label class="checkbox mr-3" for="hypertension"
+                  >Hypertension</label
+                >
+              </div>
+              <div class="field">
+                <input
+                  type="checkbox"
+                  class="history-cb"
+                  id="psychiatric-disorder"
+                  name="history-psychiatric-disorder"
+                />
+                <label class="checkbox mr-3" for="psychiatric-disorder"
+                  >Psychiatric Disorder</label
+                >
+                <input
+                  type="checkbox"
+                  class="history-cb"
+                  id="epilepsy"
+                  name="history-epilepsy"
+                />
+                <label class="checkbox mr-3" for="epilepsy">Epilepsy</label>
+                <input
+                  type="checkbox"
+                  class="history-cb"
+                  id="others"
+                  name="history-others"
+                />
+                <label class="checkbox mr-3" for="others">Other/s</label>
+                <input type="checkbox" id="none-cb" name="history-none" />
+                <label class="checkbox mr-3" for="none-cb">None</label>
+                <p class="others-feedback hidden">
+                  If others, please specify it later with your attending nurse.
+                </p>
+              </div>
+            </div>
+            <!-- CURRENT SYMPTOMS -->
+            <div class="field is-grouped">
+              <div class="select is-multiple mr-5">
+                <label class="label" for="symptoms">Current symptoms:</label>
+                <select name="symptoms" id="symptoms" multiple>
+                  <option value="chest-pain">Chest pain</option>
+                  <option value="respiratory">Respiratory</option>
+                  <option value="lymphatic">Lymphatic</option>
+                  <option id="test-symptom1" value="neurological">
+                    Neurological
+                  </option>
+                  <option value="hematological">Hematological</option>
+                  <option value="psychiatric">Psychiatric</option>
+                  <option id="test-symptom2" value="gastrointestinal">
+                    Gastrointestinal
+                  </option>
+                  <option value="weight-loss">Weight loss</option>
+                </select>
+              </div>
+              <!-- CURRENT MEDICATIONS -->
+              <div class="field">
+                <span class="label"
+                  >Are you currently taking any medication?
+                </span>
+                <input
+                  type="radio"
+                  id="yes-medication"
+                  name="medication"
+                  value="yes"
+                />
+                <label class="radio" for="yes-medication">Yes</label>
+                <input
+                  type="radio"
+                  id="no-medication"
+                  name="medication"
+                  value="no"
+                />
+                <label class="radio" for="no-medication">No</label>
+                <input
+                  name="medications"
+                  id="medications"
+                  type="text"
+                  placeholder="Please specify current medication/s"
+                />
+              </div>
+            </div>
+            <div class="notification is-danger is-light">
+              <p class="error"></p>
+            </div>
+            <div class="form-group">
+              <button class="button is-primary" type="submit" id="form-submit">
+                Submit
+              </button>
+              <!-- <button class="button is-link" id="form-reset">Reset</button> -->
+            </div>
+          </form>
+          <!-- <button id="test">TEST</button> -->
+        </div>
+      </div>
+    </section>
+    <section class="patients-container">
+      <div class="patients-wrapper">
+        <div class="patients-preview-container">
+          <h3>Patients</h3>
+          <ul class="patients-preview">
+            <!-- <li>
+              <a class="patient-preview" href="#id">
+                <span>Patient Name</span>
+                <span>Age</span>
+              </a>
+            </li> -->
+          </ul>
+        </div>
+        <div class="patient-profile-container">
+          <div class="patient-profile">
+            <div class="profile-card">
+              <!-- card -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

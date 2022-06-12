@@ -1,0 +1,18 @@
+{
+  "name": "patient-form",
+  "version": "1.0.0",
+  "description": "Form application",
+  "default": "index.html",
+  "dependencies": {
+    "parcel": "^2.6.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Argel Miralles",
+  "license": "ISC"
+}
