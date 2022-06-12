@@ -83,7 +83,15 @@ const controlFormSubmit = function (data) {
     );
 
   // Validate medications
-  if (dataObject.medication === "yes" && dataObject.medications === "")
+  if (!dataObject.medication)
+    return formView.renderError(
+      "Please let us know about your current medications"
+    );
+
+  if (
+    dataObject.medication === "yes" &&
+    (isBlank(dataObject.medications) || containsNumbers(dataObject.medications))
+  )
     return formView.renderError("Please specify your current medications");
 
   model.submitPatientInformation(dataObject, history, symptoms);
@@ -104,6 +112,12 @@ const controlFormSubmit = function (data) {
 const controlPatientCard = function () {
   const id = window.location.hash.slice(1);
   if (!id) return;
+  if (
+    !model.state.patients[
+      model.state.patients.findIndex((patient) => +patient.id === +id)
+    ]
+  )
+    return;
   model.state.patient =
     model.state.patients[
       model.state.patients.findIndex((patient) => +patient.id === +id)

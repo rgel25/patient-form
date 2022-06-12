@@ -94,6 +94,9 @@ class FormView {
     this._parentElement.reset();
     document.querySelector("#medications").disabled = false;
     this._errorContainer.innerHTML = ``;
+    document
+      .querySelectorAll(".history-cb")
+      .forEach((cb) => cb.removeAttribute("disabled"));
   }
 }
 

@@ -41,17 +41,27 @@ class PreviewProfileView {
   //     let ageInMilliseconds = new Date() - new Date(this._data.birthDate);
   //     return Math.floor(ageInMilliseconds / 1000 / 60 / 60 / 24 / 365); // convert to years
   //   }
-
+  //
   _generateMarkup() {
     return this._data
       .map((el) => {
-        return `<li>
+        if (el.middleName === "") {
+          return `<li>
       <a class="patient-preview" href="#${el.id}">
-        <span>${this._formatText(
-          `${el.firstName} ${el.middleName} ${el.lastName}`
-        )}</span>
-      </a>
-    </li>`;
+      <span>${this._formatText(`${el.firstName} ${el.lastName}`)}</span>
+    </a>
+     </li>
+     `;
+        } else {
+          return `<li>
+      <a class="patient-preview" href="#${el.id}">
+      <span>${this._formatText(
+        `${el.firstName} ${el.middleName} ${el.lastName}`
+      )}</span>
+    </a>
+     </li>
+     `;
+        }
       })
       .join("");
   }
