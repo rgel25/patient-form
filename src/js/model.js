@@ -15,9 +15,9 @@ class Patient {
     medicalHistory,
     currentSymptoms
   ) {
-    (this.firstName = firstName),
-      (this.middleName = middleName),
-      (this.lastName = lastName),
+    (this.firstName = firstName.toLowerCase()),
+      (this.middleName = middleName.toLowerCase()),
+      (this.lastName = lastName.toLowerCase()),
       (this.address = address),
       (this.birthDate = birthDate),
       (this.contactNumber = contactNumber),
